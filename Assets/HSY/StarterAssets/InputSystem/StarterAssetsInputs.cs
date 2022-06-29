@@ -17,7 +17,7 @@ namespace StarterAssets
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
-		public bool cursorLocked = true;
+		public bool cursorLocked = false;
 		public bool cursorInputForLook = true;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -32,6 +32,7 @@ namespace StarterAssets
 			{
 				LookInput(value.Get<Vector2>());
 			}
+
 		}
 
 		public void OnJump(InputValue value)
@@ -53,7 +54,7 @@ namespace StarterAssets
 
 		public void LookInput(Vector2 newLookDirection)
 		{
-			look = newLookDirection;
+			look = 3*newLookDirection; //the speed for cursor change look direction
 		}
 
 		public void JumpInput(bool newJumpState)
