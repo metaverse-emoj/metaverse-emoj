@@ -107,7 +107,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - Color_b3dd7f16b3fd4cd2b94902139a5757ce: {r: 1, g: 0.07075471, b: 0.07075471, a: 0}
+    - Color_b3dd7f16b3fd4cd2b94902139a5757ce: {r: 0.2264151, g: 0.09291563, b: 0.09291563, a: 0}
     - Color_ee744f09c88f4a5ca2a52aa617c9462f: {r: 1.1990582, g: 0, b: 5.1609426, a: 1}
     - _Color: {r: 0, g: 0.2258637, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
