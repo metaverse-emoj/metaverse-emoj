@@ -8,6 +8,8 @@ public class MainScript : MonoBehaviour
     public Image CameraImage;
     //public Button ExitButton;
     //String[] labels = {"Neutralit�", "Felicit�", "Sorpresa", "Tristezza", "Rabbia", "Disgusto", "Paura"};
+
+    public Text PrevalentEmotion;
     public Text Neutral;
     public Text Happiness;
     public Text Surprise;
@@ -15,37 +17,42 @@ public class MainScript : MonoBehaviour
     public Text Anger;
     public Text Disgust;
     public Text Fear;
+    public Text Engagment;
+    public Text valence;
+
+
 
     const int MAX_NUM_HUMANS = 5;
     const int RESULT_EACH_HUMAN = 11;
 
     private bool _isLoaded;
     private bool _ready;
-     private Texture2D tex;
+    private Texture2D tex;
     private Color32[] pixel32;
 
     private GCHandle pixelHandle;
     private IntPtr pixelPtr;
 
+    int camWidth = 0;
+    int camHeight = 0;
+
     public double[] results;
     public double[] newResults;
 
-    int camWidth = 0;
-     int camHeight = 0;
 
     // Define the functions which can be called from the .dll.
-internal static class OpenCVInterop
-{
-    [DllImport("Emoj_plugin")]
-   internal static extern  bool loadModels();
-    [DllImport("Emoj_plugin")]
-    internal static extern bool initCamera(ref int outCameraWidth, ref int outCameraHeight);
-    [DllImport("Emoj_plugin")]
-   internal static extern  int releaseCamera();
+    internal static class OpenCVInterop
+    {
+        [DllImport("Emoj_plugin")]
+        internal static extern bool loadModels();
+        [DllImport("Emoj_plugin")]
+        internal static extern bool initCamera(ref int outCameraWidth, ref int outCameraHeight);
+        [DllImport("Emoj_plugin")]
+        internal static extern int releaseCamera();
 
-    [DllImport("Emoj_plugin")]
-   internal static extern  IntPtr processImage(IntPtr data, int width, int height, ref double[] results, int MAX_NUM_HUMANS, int RESULT_EACH_HUMAN);
-}
+        [DllImport("Emoj_plugin")]
+        internal static extern IntPtr processImage(IntPtr data, int width, int height, ref double[] results, int MAX_NUM_HUMANS, int RESULT_EACH_HUMAN);
+    }
 
 
     // Start is called before the first frame update
@@ -66,18 +73,21 @@ internal static class OpenCVInterop
 
         // Debug.Log(path);
         _isLoaded = OpenCVInterop.loadModels();
-        Debug.Log("models loaded?"+_isLoaded);
+        Debug.Log("models loaded?" + _isLoaded);
 
         _ready = OpenCVInterop.initCamera(ref camWidth, ref camHeight);
         Debug.Log("Camera ready?" + _ready);
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        double[] results = new double[MAX_NUM_HUMANS * RESULT_EACH_HUMAN];
+        results = new double[MAX_NUM_HUMANS * RESULT_EACH_HUMAN];
+        newResults = new double[MAX_NUM_HUMANS * RESULT_EACH_HUMAN];
 
-        if (_isLoaded && _ready) {
+
+        if (_isLoaded && _ready)
+        {
 
             IntPtr r = OpenCVInterop.processImage(pixelPtr, tex.width, tex.height, ref results, MAX_NUM_HUMANS, RESULT_EACH_HUMAN);
             int arrayLength = Marshal.ReadInt32(r);
@@ -91,20 +101,26 @@ internal static class OpenCVInterop
 				10.valence;
                 */
             //Debug.Log("LAST ELEMENT INSIDE results --->:" + results[MAX_NUM_HUMANS * RESULT_EACH_HUMAN -1]);
-            if (results[0] != 0 ){
+            if (results[0] != 0)
+            {
                 DateTimeOffset tempo = DateTimeOffset.FromUnixTimeMilliseconds((long)results[0]);
                 Debug.Log("timestamp:" + tempo.ToLocalTime().ToString("MM/dd/yyyy hh:mm:ss.fff"));
                 Debug.Log("Prevalent Emotion:" + results[1]);
             }
+            //PrevalentEmotion.text = "Prevalent Emotion:" + (results[1]).ToString();
             Neutral.text = "Neutral:" + (Math.Round(results[2] * 100, 2)).ToString();
             Happiness.text = "Happiness:" + (Math.Round(results[3] * 100, 2)).ToString();
             Surprise.text = "Surprise:" + (Math.Round(results[4] * 100, 2)).ToString();
             Sadness.text = "Sadness:" + (Math.Round(results[5] * 100, 2)).ToString();
             Anger.text = "Anger:" + (Math.Round(results[6] * 100, 2)).ToString();
             Disgust.text = "Disgust:" + (Math.Round(results[7] * 100, 2)).ToString();
-            Fear.text = "Fear:" + (results[8]).ToString();
+            Fear.text = "Fear:" + (Math.Round(results[8] * 100, 2)).ToString();
+            Engagment.text = "Engagment:" + (results[9]).ToString();
+            valence.text = "valence:" + (results[10]).ToString();
 
-            Debug.Log("Happiness:" + results[3]);
+
+
+            // Debug.Log("Happiness:" + results[3]);
             Debug.Log("Engagment:" + results[9]);
             Debug.Log("valence:" + results[10]);
             tex.SetPixels32(pixel32);
