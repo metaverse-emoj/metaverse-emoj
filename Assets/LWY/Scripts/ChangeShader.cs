@@ -5,21 +5,25 @@ using UnityEngine;
 public class ChangeShader : MonoBehaviour
 {
     public GameObject Ch03;
-
+    public Material dissolveMat;
+    public float health;
+    public float maxHealth;
     
     void Start()
     {
-       
+        dissolveMat.SetFloat("", health / maxHealth);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M)){
+        if (Input.GetKeyDown(KeyCode.Space)){
             Debug.Log("@##$#$");
-
-            Ch03.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
+            health -= 5;
+            dissolveMat.SetFloat("", health / maxHealth);
+            
+            //Ch03.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
             //Debug.Log(material.name);
 
             //material.SetColor("_Color",Color.blue);

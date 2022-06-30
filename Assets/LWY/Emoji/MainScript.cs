@@ -27,8 +27,10 @@ public class MainScript : MonoBehaviour
     private GCHandle pixelHandle;
     private IntPtr pixelPtr;
 
+    public double[] results;
+    public double[] newResults;
 
-     int camWidth = 0;
+    int camWidth = 0;
      int camHeight = 0;
 
     // Define the functions which can be called from the .dll.
