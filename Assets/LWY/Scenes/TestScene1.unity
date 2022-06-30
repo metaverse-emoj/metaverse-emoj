@@ -1780,6 +1780,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ch03: {fileID: 1563704490}
+  dissolveMat: {fileID: 2100000, guid: 637bdcd6758ae9240bfd0c81f3274e2c, type: 2}
+  health: 100
+  maxHealth: 100
 --- !u!4 &954690528
 Transform:
   m_ObjectHideFlags: 0
@@ -2416,6 +2419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ch03_nonPBR
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: fc8594b800ccf49c88338eda9b632193, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b9265456b4d9bc04593468b0675411a8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc8594b800ccf49c88338eda9b632193, type: 3}
 --- !u!1 &1563704490 stripped

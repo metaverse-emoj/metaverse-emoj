@@ -11,7 +11,7 @@ public class ChangeShader : MonoBehaviour
     
     void Start()
     {
-        dissolveMat.SetFloat("", health / maxHealth);
+        dissolveMat.SetFloat("Vector1_0442e26947fd4acb843e1a6f0751292a", health / maxHealth);
         
     }
 
@@ -21,7 +21,7 @@ public class ChangeShader : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)){
             Debug.Log("@##$#$");
             health -= 5;
-            dissolveMat.SetFloat("", health / maxHealth);
+            dissolveMat.SetFloat("Vector1_0442e26947fd4acb843e1a6f0751292a", health / maxHealth);
             
             //Ch03.GetComponent<Renderer>().material.SetColor("_Color", Color.blue);
             //Debug.Log(material.name);
