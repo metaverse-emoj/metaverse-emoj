@@ -21,8 +21,8 @@ public class emojpiechart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        newResults = script.results;
-        Debug.Log(PieChart);
+       // newResults = script.results;
+        //Debug.Log(PieChart);
         //Debug.Log("anger:" + newResults[3]);
     }
 }
