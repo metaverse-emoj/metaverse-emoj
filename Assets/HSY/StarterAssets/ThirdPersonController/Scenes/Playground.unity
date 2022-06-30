@@ -160,8 +160,6 @@ MonoBehaviour:
   Anger: {fileID: 269629551}
   Disgust: {fileID: 464782508}
   Fear: {fileID: 1905674983}
-  newResults: []
-  results: []
 --- !u!4 &57222800
 Transform:
   m_ObjectHideFlags: 0
@@ -435,7 +433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -640, y: 194.11}
   m_SizeDelta: {x: 640, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &220188765
@@ -3320,7 +3318,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449647618}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b311de3bd44f94286103f8a5f2ed5e, type: 3}
   m_Name: 
