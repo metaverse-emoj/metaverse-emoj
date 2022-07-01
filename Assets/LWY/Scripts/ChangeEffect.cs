@@ -23,17 +23,17 @@ public class ChangeEffect : MonoBehaviour
     void Update()
     {
         newResults = script.results;
-        Debug.Log("anger:" + newResults[6]);
+        // Debug.Log("anger:" + newResults[6]);
 
         if (newResults[6] * 100 > 50.0)
         {
             Cube.GetComponent<Renderer>().material.color = Color.red;
-            Debug.Log("RED");
+            // Debug.Log("RED");
         }
         else
         {
             Cube.GetComponent<Renderer>().material.color = Color.blue;
-            Debug.Log("BLUE");
+            // Debug.Log("BLUE");
         }
 
     }

@@ -105,7 +105,7 @@ public class MainScript : MonoBehaviour
             {
                 DateTimeOffset tempo = DateTimeOffset.FromUnixTimeMilliseconds((long)results[0]);
                 Debug.Log("timestamp:" + tempo.ToLocalTime().ToString("MM/dd/yyyy hh:mm:ss.fff"));
-                Debug.Log("Prevalent Emotion:" + results[1]);
+                // Debug.Log("Prevalent Emotion:" + results[1]);
             }
             //PrevalentEmotion.text = "Prevalent Emotion:" + (results[1]).ToString();
             Neutral.text = "Neutral:" + (Math.Round(results[2] * 100, 2)).ToString();
@@ -117,12 +117,12 @@ public class MainScript : MonoBehaviour
             Fear.text = "Fear:" + (Math.Round(results[8] * 100, 2)).ToString();
             Engagment.text = "Engagment:" + (results[9]).ToString();
             valence.text = "valence:" + (results[10]).ToString();
-
+            
 
 
             // Debug.Log("Happiness:" + results[3]);
-            Debug.Log("Engagment:" + results[9]);
-            Debug.Log("valence:" + results[10]);
+            // Debug.Log("Engagment:" + results[9]);
+            // Debug.Log("valence:" + results[10]);
             tex.SetPixels32(pixel32);
             tex.Apply();
 
