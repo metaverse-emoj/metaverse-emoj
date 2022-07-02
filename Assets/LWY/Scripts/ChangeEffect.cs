@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.VFX;
+
 
 public class ChangeEffect : MonoBehaviour
 {
@@ -14,7 +16,8 @@ public class ChangeEffect : MonoBehaviour
 
     //Set Objects
     public GameObject VFXElement;
-    private ParticleSystem ps;
+    private VisualEffect visualEffect;
+    
 
 
 
@@ -26,15 +29,27 @@ public class ChangeEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        visualEffect=VFXElement.GetComponent<VisualEffect>();
     }
 
     void Update()
     {
-        newResults = MainScript.results;
-        Debug.Log("Fuckanger:" + newResults[6]);
+        if(MainScript.results!=null)
+        {
+            newResults = MainScript.results;
 
 
+            if(newResults[6]>0.5f)
+            {
+                Function_VFX_Meeting.ChangeColor(visualEffect);
+                Debug.Log(newResults[6]);
+            }
+
+
+        }
+        
+
+        //Debug.Log("Fuckanger:" + newResults[6]);
 
 
 

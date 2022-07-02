@@ -104,7 +104,8 @@ public class MainScript : MonoBehaviour
             if (results[0] != 0)
             {
                 DateTimeOffset tempo = DateTimeOffset.FromUnixTimeMilliseconds((long)results[0]);
-                Debug.Log("timestamp:" + tempo.ToLocalTime().ToString("MM/dd/yyyy hh:mm:ss.fff"));
+                
+                //Debug.Log("timestamp:" + tempo.ToLocalTime().ToString("MM/dd/yyyy hh:mm:ss.fff"));
                 // Debug.Log("Prevalent Emotion:" + results[1]);
             }
             //PrevalentEmotion.text = "Prevalent Emotion:" + (results[1]).ToString();
