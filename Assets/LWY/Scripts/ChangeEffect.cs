@@ -8,11 +8,13 @@ public class ChangeEffect : MonoBehaviour
 {
     
     //Receive MainScript
-    public MainScript script;
+    //public MainScript script; 不用拖，直接获取即可
     double[] newResults;
     
-    
-    //public GameObject Cube;
+
+    //Set Objects
+    public GameObject VFXElement;
+    private ParticleSystem ps;
 
 
 
@@ -24,33 +26,16 @@ public class ChangeEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     void Update()
     {
-        newResults = script.results;
-        // Debug.Log("anger:" + newResults[6]);
-
-        
+        newResults = MainScript.results;
+        Debug.Log("Fuckanger:" + newResults[6]);
 
 
 
-
-
-        /*
-        if (newResults[6] * 100 > 50.0)
-        {
-            Cube.GetComponent<Renderer>().material.color = Color.red;
-            // Debug.Log("RED");
-        }
-        else
-        {
-            Cube.GetComponent<Renderer>().material.color = Color.blue;
-            // Debug.Log("BLUE");
-        }
-
-        */
 
 
     }

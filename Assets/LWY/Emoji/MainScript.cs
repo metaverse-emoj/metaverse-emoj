@@ -36,8 +36,8 @@ public class MainScript : MonoBehaviour
     int camWidth = 0;
     int camHeight = 0;
 
-    public double[] results;
-    public double[] newResults;
+    public static double[] results;
+    //public double[] newResults;
 
 
     // Define the functions which can be called from the .dll.
@@ -83,7 +83,7 @@ public class MainScript : MonoBehaviour
     void Update()
     {
         results = new double[MAX_NUM_HUMANS * RESULT_EACH_HUMAN];
-        newResults = new double[MAX_NUM_HUMANS * RESULT_EACH_HUMAN];
+        //newResults = new double[MAX_NUM_HUMANS * RESULT_EACH_HUMAN];
 
 
         if (_isLoaded && _ready)

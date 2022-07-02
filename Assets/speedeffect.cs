@@ -11,6 +11,9 @@ public class speedeffect : MonoBehaviour
     double[] newResults;
     public GameObject Sphere;
     public Material Shader_2_1;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,14 +21,22 @@ public class speedeffect : MonoBehaviour
     }
 
     //set emoj parameters to 0-100
+    /*
     float emomath(double x)
     {   
         return (float)Math.Round(x * 100, 2);
     }
+    */
+
+
+
     // Update is called once per frame
     void Update()
+    
+    
     {
-        newResults = script.results;
+       /* 
+        newResults = MainScript.results;
         Debug.Log("anger!!:" + emomath(newResults[6]));
      
         if(Shader_2_1 != null){
@@ -38,7 +49,8 @@ public class speedeffect : MonoBehaviour
             // Shader_2_1.SetFloat("_NoiseScale", noiseScaleSlider.value);
             // noiseScaleSliderLabel.text = $"Noise Scale: {noiseScaleSlider.value}";
         }        
-      
+      */
 
     }
+    
 }

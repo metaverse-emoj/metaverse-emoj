@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeShader : MonoBehaviour
+public class Function_Shader : MonoBehaviour
 {
     public GameObject Ch03;
     public Material dissolveMat;
