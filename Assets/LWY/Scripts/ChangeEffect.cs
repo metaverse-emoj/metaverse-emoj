@@ -6,10 +6,17 @@ using System;
 
 public class ChangeEffect : MonoBehaviour
 {
+    
+    //Receive MainScript
     public MainScript script;
     double[] newResults;
-    public GameObject Cube;
+    
+    
+    //public GameObject Cube;
 
+
+
+    //Set time delay, not detect so fast
     private float timer = 0;
     private float delayTime = 1;
 
@@ -25,6 +32,13 @@ public class ChangeEffect : MonoBehaviour
         newResults = script.results;
         // Debug.Log("anger:" + newResults[6]);
 
+        
+
+
+
+
+
+        /*
         if (newResults[6] * 100 > 50.0)
         {
             Cube.GetComponent<Renderer>().material.color = Color.red;
@@ -35,6 +49,9 @@ public class ChangeEffect : MonoBehaviour
             Cube.GetComponent<Renderer>().material.color = Color.blue;
             // Debug.Log("BLUE");
         }
+
+        */
+
 
     }
 
