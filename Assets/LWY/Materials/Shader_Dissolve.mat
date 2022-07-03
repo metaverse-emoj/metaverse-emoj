@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DissolveShader
+  m_Name: Shader_Dissolve
   m_Shader: {fileID: -6465566751694194690, guid: 5b30a3b9b50466241ae59ab3eaa8d241, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
