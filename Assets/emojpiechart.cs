@@ -6,21 +6,23 @@ using System;
 
 public class emojpiechart : MonoBehaviour
 {
-    public MainScript script;
-    double[] newResults;
     public GameObject PieChart;
-
-    
+    float emotionData;
+    double[] newResults;
+   
     // Start is called before the first frame update
     void Start()
     {
-        //mainScript = GameObject.Find("Script").getComponent();
-       // Mainscript
+        
     }
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        emotionData=Function_DoubletoFloat.emoMath(newResults[6]);
+        newResults = MainScript.results;
+        Debug.Log(newResults[1]);
+        
        // newResults = script.results;
         //Debug.Log(PieChart);
         //Debug.Log("anger:" + newResults[3]);

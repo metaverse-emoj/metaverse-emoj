@@ -7,7 +7,7 @@ using System;
 
 public class speedeffect : MonoBehaviour
 {
-     double[] newResults;
+    double[] newResults;
     
     //Receive biggest emotionData
     float emotionData;
@@ -25,7 +25,7 @@ public class speedeffect : MonoBehaviour
         newResults = MainScript.results;
        
         emotionData=Function_DoubletoFloat.emoMath(newResults[6]);
-         Debug.Log("anger!" + emotionData);
+        Debug.Log("anger!" + emotionData);
 
         if(Shader_2_1 != null){
             // time speed 

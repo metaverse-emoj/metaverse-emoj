@@ -6,6 +6,7 @@ namespace Michsky.UI.ModernUIPack
 {
     public class UIManagerPieChart : MonoBehaviour
     {
-        
+        double[] newResults;
+        float emotionData;
     }
 }

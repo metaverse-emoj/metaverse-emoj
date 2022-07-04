@@ -3292,6 +3292,7 @@ GameObject:
   - component: {fileID: 1179838370}
   - component: {fileID: 1179838369}
   - component: {fileID: 1179838368}
+  - component: {fileID: 1179838371}
   m_Layer: 0
   m_Name: Pie Chart
   m_TagString: Untagged
@@ -3424,6 +3425,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179838366}
   m_CullTransparentMesh: 0
+--- !u!114 &1179838371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179838366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b311de3bd44f94286103f8a5f2ed5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PieChart: {fileID: 1179838366}
 --- !u!1001 &1221041499
 PrefabInstance:
   m_ObjectHideFlags: 0
