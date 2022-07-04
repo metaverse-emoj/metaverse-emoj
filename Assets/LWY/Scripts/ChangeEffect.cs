@@ -10,8 +10,10 @@ public class ChangeEffect : MonoBehaviour
 {
     
     //Receive MainScript
-    //public MainScript script; 不用拖，直接获取即可
     double[] newResults;
+    
+    //Receive biggest emotionData
+    float emotionData;
     
 
     //Set Objects
@@ -19,11 +21,10 @@ public class ChangeEffect : MonoBehaviour
     private VisualEffect visualEffect;
     
 
-
-
     //Set time delay, not detect so fast
     private float timer = 0;
     private float delayTime = 1;
+
 
 
     // Start is called before the first frame update
@@ -32,25 +33,25 @@ public class ChangeEffect : MonoBehaviour
         visualEffect=VFXElement.GetComponent<VisualEffect>();
     }
 
+
+
     void Update()
     {
         if(MainScript.results!=null)
         {
             newResults = MainScript.results;
 
+            emotionData=Function_DoubletoFloat.emoMath(newResults[6]);
 
-            if(newResults[6]>0.5f)
+            if(emotionData>50.0f)
             {
-                Function_VFX_Meeting.ChangeColor(visualEffect);
-                Debug.Log(newResults[6]);
+                Function_VFX_Meeting.ChangeColor(visualEffect,emotionData);
+                //Debug.Log(xxx);
+
             }
 
 
         }
-        
-
-        //Debug.Log("Fuckanger:" + newResults[6]);
-
 
 
     }

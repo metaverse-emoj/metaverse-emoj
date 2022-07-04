@@ -2,18 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
+using System;
 
+    //1.Prevalent Emotion
+    //2.Neutral
+
+    //Use the biggest data to set color saturation
+    //3.Happiness
+    //4.Surprise
+    //5.Sadness
+    //6.Anger
+    //7.Disgust
+    //8.Fear
+
+    //Size of the VFX
+    //9.Engagement       
+
+
+    //10.Valence
+
+    private float Intensity=0.5f;
 
 public class Function_VFX_Meeting : MonoBehaviour
 {
-    //Set Objects, not here!
-    //public GameObject VFXElement;
 
-
-    public static void ChangeColor(VisualEffect visualEffect)
+    public static void ChangeColor(VisualEffect visualEffect,float emotionData)
     {
-        visualEffect.SetVector4("Color",new Vector4(255,0,0,0));
-        Debug.Log("VFX works");
+        visualEffect.SetVector4("Color",new Vector4(emotionData/100*255*Intensity,30*Intensity,30*Intensity,0));
+        
+        
+        //visualEffect.SetFloat("_Intensity",0f);
+        //_Intensity ("Intensity",Float) = 0
+
+
+        Debug.Log(emotionData);
 
     }
+
+
 }
