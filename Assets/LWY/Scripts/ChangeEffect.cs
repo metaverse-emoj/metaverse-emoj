@@ -14,6 +14,7 @@ public class ChangeEffect : MonoBehaviour
     
     //Receive biggest emotionData
     float emotionData;
+    int sequence;
     
 
     //Set Objects
@@ -23,7 +24,7 @@ public class ChangeEffect : MonoBehaviour
 
     //Set time delay, not detect so fast
     private float timer = 0;
-    private float delayTime = 1;
+    private float delayTime = 0.5;
 
 
 
@@ -37,22 +38,49 @@ public class ChangeEffect : MonoBehaviour
 
     void Update()
     {
+
         if(MainScript.results!=null)
         {
             newResults = MainScript.results;
+            (emotionData,sequence)=Function_BiggestEmojData.GetMax(newResults);
 
-            emotionData=Function_DoubletoFloat.emoMath(newResults[6]);
 
-            if(emotionData>50.0f)
+            //Set delay--------
+            timer+= Time.deltaTime;
+
+            if(timer>=delayTime)
             {
-                Function_VFX_Meeting.ChangeColor(visualEffect,emotionData);
-                //Debug.Log(xxx);
+                selectEmotion();
+                timer=0;
 
             }
 
 
+
         }
 
+
+    }
+
+
+    void selectEmotion(){
+                    
+            switch (sequence)
+            {
+                case 3:
+                    Function_VFX_Meeting.Happiness(visualEffect,emotionData);
+                    break;
+
+                case 4:
+                    Function_VFX_Meeting.Surprise(visualEffect,emotionData);
+                    break;
+
+
+                case 6:
+                    Function_VFX_Meeting.Anger(visualEffect,emotionData);
+                    break;
+
+            }
 
     }
 
