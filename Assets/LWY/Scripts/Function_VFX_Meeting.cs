@@ -21,14 +21,16 @@ using System;
 
     //10.Valence
 
-    private float Intensity=0.5f;
 
 public class Function_VFX_Meeting : MonoBehaviour
 {
 
+    float intensity=0.5f;
+
+
     public static void ChangeColor(VisualEffect visualEffect,float emotionData)
     {
-        visualEffect.SetVector4("Color",new Vector4(emotionData/100*255*Intensity,30*Intensity,30*Intensity,0));
+        visualEffect.SetVector4("Color",new Vector4(emotionData/100*255,30,30,0));
         
         
         //visualEffect.SetFloat("_Intensity",0f);
