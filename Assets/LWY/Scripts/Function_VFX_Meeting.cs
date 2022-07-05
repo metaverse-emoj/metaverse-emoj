@@ -15,11 +15,12 @@ using System;
     //7.Disgust    Purple(128,0,128)
     //8.Fear       Green(0,255,0)
 
-    //Size of the VFX
+    //Size of the VFX          
     //9.Engagement       
 
 
     //10.Valence
+
 
 
 public class Function_VFX_Meeting : MonoBehaviour
@@ -32,7 +33,7 @@ public class Function_VFX_Meeting : MonoBehaviour
 
         //Set to adjust intensity
         float factor = Mathf.Pow(2, 5.0f);
-
+        
 
         visualEffect.SetVector4("Color",new Vector4(emotionData/100*255/factor,emotionData/100*255/factor,30/factor,0));
 
@@ -57,6 +58,7 @@ public class Function_VFX_Meeting : MonoBehaviour
 
 
         visualEffect.SetVector4("Color",new Vector4(emotionData/100*255/factor,emotionData/100*128/factor,30/factor,0));
+        
 
         
         

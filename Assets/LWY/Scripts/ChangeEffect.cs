@@ -32,6 +32,7 @@ public class ChangeEffect : MonoBehaviour
     void Start()
     {
         visualEffect=VFXElement.GetComponent<VisualEffect>();
+        
     }
 
 
