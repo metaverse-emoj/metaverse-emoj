@@ -23,7 +23,9 @@ namespace Michsky.UI.ModernUIPack
 		private float fillAmount = 1f;
 		private int segments = 720;
 
-		[System.Serializable]
+        public object Picechartdatanode { get; internal set; }
+
+        [System.Serializable]
 		public class PieChartDataNode
 		{
 			public string name = "Chart Item";
