@@ -36,7 +36,7 @@ public class Function_VFX_Meeting : MonoBehaviour
         
 
         visualEffect.SetVector4("Color",new Vector4(emotionData/100*255/factor,emotionData/100*255/factor,30/factor,0));
-
+        
         
         
         //visualEffect.SetFloat("_Intensity",0f);

@@ -9,7 +9,7 @@ public class MainScript : MonoBehaviour
     //public Button ExitButton;
     //String[] labels = {"Neutralit�", "Felicit�", "Sorpresa", "Tristezza", "Rabbia", "Disgusto", "Paura"};
 
-    public Text PrevalentEmotion;
+    //public Text PrevalentEmotion;
     public Text Neutral;
     public Text Happiness;
     public Text Surprise;
