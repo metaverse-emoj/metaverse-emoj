@@ -30,7 +30,7 @@ public class ChangeEffect : MonoBehaviour
 
     //Set time delay, not detect so fast
     private float timer = 0;
-    private float delayTime = 0.1f;
+    private float delayTime = 0.25f;
 
 
 
