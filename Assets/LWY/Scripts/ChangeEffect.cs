@@ -14,6 +14,7 @@ public class ChangeEffect : MonoBehaviour
     
     //Receive biggest emotionData
     float emotionData;
+    float engagementData;
     int sequence;
     
 
@@ -24,7 +25,7 @@ public class ChangeEffect : MonoBehaviour
 
     //Set time delay, not detect so fast
     private float timer = 0;
-    private float delayTime = 0.5f;
+    private float delayTime = 0.1f;
 
 
 
@@ -44,22 +45,22 @@ public class ChangeEffect : MonoBehaviour
         {
             newResults = MainScript.results;
             (emotionData,sequence)=Function_BiggestEmojData.GetMax(newResults);
-
+            engagementData = Function_DoubletoFloat.emoMath(newResults[9]);
+            Debug.Log(engagementData);
 
             //Set delay--------
             timer+= Time.deltaTime;
 
             if(timer>=delayTime)
             {
+                //Set color and size-------
                 selectEmotion();
-                timer=0;
+                selectSize();
+                timer =0;
 
             }
 
-
-
         }
-
 
     }
 
@@ -82,8 +83,16 @@ public class ChangeEffect : MonoBehaviour
                     break;
 
             }
-
     }
+
+    void selectSize()
+    {
+        Function_VFX_Meeting.changeSize(visualEffect, engagementData);
+    }
+
+
+
+
 
     }
 
