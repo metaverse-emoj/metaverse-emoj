@@ -12,11 +12,16 @@ public class ChangeEffect : MonoBehaviour
     //Receive MainScript
     double[] newResults;
     
+
     //Receive biggest emotionData
     float emotionData;
     float engagementData;
     int sequence;
-    
+
+
+    //Set environmemt material
+    public Material material;
+
 
     //Set Objects
     public GameObject VFXElement;
@@ -29,11 +34,10 @@ public class ChangeEffect : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
     void Start()
     {
         visualEffect=VFXElement.GetComponent<VisualEffect>();
-        
+
     }
 
 
@@ -53,9 +57,12 @@ public class ChangeEffect : MonoBehaviour
 
             if(timer>=delayTime)
             {
-                //Set color and size-------
+
+                //------------------------------------------Set color, size and environment color-----------------------------------------
                 selectEmotion();
                 selectSize();
+                selectEnvironmetColor();
+
                 timer =0;
 
             }
@@ -88,6 +95,11 @@ public class ChangeEffect : MonoBehaviour
     void selectSize()
     {
         Function_VFX_Meeting.changeSize(visualEffect, engagementData);
+    }
+
+    void selectEnvironmetColor()
+    {
+        Function_VFX_Meeting.changeEnvironment(material);
     }
 
 

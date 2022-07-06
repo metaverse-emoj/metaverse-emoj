@@ -87,4 +87,9 @@ public class Function_VFX_Meeting : MonoBehaviour
         visualEffect.SetFloat("Size",engagementData/10000*5);
     }
 
+    public static void changeEnvironment(Material material)
+    {
+        material.SetColor("_EmissionColor", new Color(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f)));
+    }
+
 }
