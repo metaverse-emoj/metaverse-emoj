@@ -89,7 +89,8 @@ public class Function_VFX_Meeting : MonoBehaviour
 
     public static void changeEnvironment(Material material)
     {
-        material.SetColor("_EmissionColor", new Color(UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f), UnityEngine.Random.Range(0f, 1f)));
+        
+        material.SetColor("_EmissionColor", new Color(UnityEngine.Random.Range(0f, 1f), 0.5f, 1-UnityEngine.Random.Range(0f, 1f)));
     }
 
 }
